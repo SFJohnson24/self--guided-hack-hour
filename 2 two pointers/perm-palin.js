@@ -12,6 +12,7 @@
  * 	- permPalin('a') => true
  *
  * Hint: Think about the length of the string and how that relates to the frequencies of the characters
+ 
  */
 
 const permPalin = str => {
