@@ -6,7 +6,7 @@ Please implement encode and decode methods
 @param {string[]} strs
 @return {string}
 */
-
+//adding a delimiter
 var encode= function(strs){
     if (!strs.length) return null;
     return strs.join("-encodeStr-")
