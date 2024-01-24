@@ -3,7 +3,20 @@ function BinarySearchTree(value) {
   this.right = null;
   this.left = null;
 }
+/*
+A binary tree's maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
 
+*/
+const maxDepth = function(root) {
+  if (root === null) {
+     return 0;
+   }
+ 
+   const leftHeight = maxDepth(root.left);
+   const rightHeight = maxDepth(root.right);
+ 
+   return 1 + Math.max(leftHeight, rightHeight);
+ };
 /*
 Find the tallest height of a binary search tree.
 Ex. the tallest height of:
@@ -17,16 +30,16 @@ Ex. the tallest height of:
 is 3, because the tallest height of the tree connects the numbers 4 - 7 - 9 - 8
 and has 3 links.
 */
-const bstHeight = (tree) => {
-  if (tree === null) {
-    return -1;
-  }
-
-  const leftHeight = bstHeight(tree.left);
-  const rightHeight = bstHeight(tree.right);
-
-  return 1 + Math.max(leftHeight, rightHeight);
-};
+const maxHeight = function(root) {
+  if (root === null) {
+     return -1;
+   }
+ 
+   const leftHeight = maxHeight(root.left);
+   const rightHeight = maxHeight(root.right);
+ 
+   return 1 + Math.max(leftHeight, rightHeight);
+ };
 
 /*
   Extension:

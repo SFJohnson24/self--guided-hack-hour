@@ -23,6 +23,27 @@ It is guaranteed that the answer will in the range of a 32-bit signed integer.
  *     this.right = (right===undefined ? null : right)
  * }
  */
+
+var diameterOfBinaryTree = function(root) {
+  let diameter = 0;
+  dfs(root);
+  return diameter;
+  
+  function dfs(node, level) {
+      if (!node) return 0;
+      
+      const left = dfs(node.left);
+      const right = dfs(node.right);
+      
+      // update diameter at every node
+      diameter = Math.max(diameter, left + right);
+
+      // update the largest number of edge so far
+      return 1 + Math.max(left, right);
+  }
+};
+
+
 /**
  * @param {TreeNode} root
  * @return {number}
@@ -56,3 +77,5 @@ var widthOfBinaryTree = function (root) {
 
   return maxWidth;
 };
+
+

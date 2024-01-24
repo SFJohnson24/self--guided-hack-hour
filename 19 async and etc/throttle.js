@@ -83,19 +83,6 @@ const throttle = (f, t) => {
       else asked = true;
     };
   };
-  
-    // let lastExec=0
-    // return ()=>{
-    //     const invokeTime = Date.now()
-    //     const diff = invokeTime-lastExec
-    //     console.log(diff)
-    //     if (diff>=t){
-    //         f()
-    //         lastExec=invokeTime
-    //     }
-// }
-// }
-
 
 // let s=0
 // let callback= ()=>s++;

@@ -21,6 +21,7 @@ Output: [0]
 
  */
 
+// Time O(N + M) | Space O(N + M)
 var mergeTwoLists = function (l1, l2) {
   if (!l1) return l2;
   else if (!l2) return l1;
@@ -32,3 +33,4 @@ var mergeTwoLists = function (l1, l2) {
     return l2;
   }
 };
+
