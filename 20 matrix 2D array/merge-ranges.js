@@ -24,7 +24,9 @@ const mergeRanges = intervals => {
   //console.log(intervals)
   for (let i=0; i<intervals.length-1; i++){
     if (intervals[i][1] >= intervals[i+1][0]){
+      //change second value in intervals[i][1] 
         intervals[i][1] = Math.max(intervals[i+1][1], intervals[i][1])
+      //remove second interval from array
         intervals.splice(i+1, 1);
     }
     return intervals
