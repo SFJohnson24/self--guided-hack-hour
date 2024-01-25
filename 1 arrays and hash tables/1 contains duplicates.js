@@ -17,14 +17,19 @@ Input: nums = [1,1,1,3,3,4,3,2,4,2]
 Output: true
 */
 
-var containsDuplicate = function(nums) {
-    let result={}
-    for (let i=0; i<nums.length; i++){
-        if ( result.hasOwnProperty(nums[i])){
-            return true;
-        } else{
-            result[nums[i]]=true;
-        }
+var containsDuplicate = (nums) => {
+    const numsSet = new Set(nums);/* Time O(N) | Space O(N) */
+    const isEqual = numsSet.size === nums.length;
+
+    return !isEqual;
+};
+
+var containsDuplicate = (nums, numsSet = new Set()) => {
+    for (const num of nums) {
+        if (numsSet.has(num)) return true;
+
+        numsSet.add(num);
     }
-    return false
+
+    return false;
 };

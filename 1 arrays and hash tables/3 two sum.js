@@ -16,7 +16,7 @@ var twoSum = function(nums, target) {
       let value=map.get(diff)
       return [i, value]
     }
-        //set the map value to the diff
+        //set the map key to the diff, value to index
     map.set(nums[i], i)
   }
 };
